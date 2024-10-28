@@ -2,6 +2,7 @@
 #define GOVERNMENT_H
 
 #include "Citizen.h"
+#include "CityGrowthManager.h"
 
 #include <string>
 #include <vector>
@@ -16,7 +17,7 @@ class Government {
       vector<Citizen> citizens ;
       vector<Building> buildings ;
   public :
-    Government(double cRate, double bRate, vector<Citizen*>)
+    Government(double cRate, double bRate, vector<Citizen*>);
 
     // Command
     void collectCitizenTax() ;
