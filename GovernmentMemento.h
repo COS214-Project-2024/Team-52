@@ -16,7 +16,11 @@ class GovernmentMemento {
         vector<Building*> buildings; 
     public:
         void getDetails();
-        GovernmentMemento(double buildingTaxRate,double citizenTaxRate, vector<Citizen*> citizen,vector<Building*> buildings);  
-};
+        GovernmentMemento(double buildingTaxRate,double citizenTaxRate, vector<Citizen*> citizen,vector<Building*> buildings);
+        double getbuildingTaxRate();
+        double getcitizenTaxRate();
+         vector<Citizen*> getcitizens();
+         vector<Building*> getbuildings();
+};      
 
 #endif

@@ -13,3 +13,23 @@ GovernmentMemento::GovernmentMemento(double buildingTaxRate,double citizenTaxRat
     this->citizens = citizen;
     this->buildings = buildings;
 }
+
+double GovernmentMemento::getbuildingTaxRate()
+{
+    return buildingTaxRate;
+}
+
+double GovernmentMemento::getcitizenTaxRate()
+{
+    return citizenTaxRate;
+}
+
+vector<Citizen *> GovernmentMemento::getcitizens()
+{
+    return citizens;
+}
+
+vector<Building *> GovernmentMemento::getbuildings()
+{
+    return buildings;
+}
