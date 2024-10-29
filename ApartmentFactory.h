@@ -8,6 +8,7 @@ class ApartmentFactory: public BuildingFactory{
     private:
 
     public:
+        Unit* createUnit(int unitNumber, string size);
         Building* construct() override;
 };
 
