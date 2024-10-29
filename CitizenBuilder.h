@@ -7,7 +7,7 @@ using namespace std;
 
 class CitizenBuilder{
  public:
-    virtual ~CitizenBuilder();
+    virtual ~CitizenBuilder() = default;   
     virtual void setName(const std::string& name) = 0;
     virtual void setID(int ID) = 0;
     virtual void setAge(int age) = 0;
