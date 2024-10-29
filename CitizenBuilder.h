@@ -3,12 +3,18 @@
 
 #include <iostream>
 using namespace std;
+#include "Citizen.h"
 
 class CitizenBuilder{
-    private:
-
-    public:
-    
+ public:
+    virtual ~CitizenBuilder();
+    virtual void setName(const std::string& name) = 0;
+    virtual void setID(int ID) = 0;
+    virtual void setAge(int age) = 0;
+    virtual void setIncome(double income) = 0;
+    virtual void setSatisfaction(int satisfaction) = 0;
+    virtual void setEmploymentStatus(bool isEmployed) = 0;
+    virtual Citizen* getCitizen() = 0;
 };
 
 #endif
