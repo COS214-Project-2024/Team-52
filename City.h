@@ -9,7 +9,7 @@
 using namespace std ;
 
 
-class City{
+class City: public CityAggregate{
     private :
         vector<Command*> commands ;
         vector<Building*> buildings ;
