@@ -9,7 +9,8 @@ class Landmark: public Building{
         string size;
         BuildingState* state;
     public:
-    Landmark(string name, string size);
+    Landmark(string name);
+    void setSize(string size);
     void displayInfo() override;
     void setState(BuidlingState* newState) override;
     void getState() override;

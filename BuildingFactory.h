@@ -8,7 +8,7 @@ class BuildingFactory{
     private:
 
     public:
-        virtual Building* construct() =0;
+        virtual Building* construct(string name) =0;
 };
 
 #endif

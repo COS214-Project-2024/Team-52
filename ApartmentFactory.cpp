@@ -1,7 +1,7 @@
 #include "ApartmentFactory.h"
 
-Building* ApartmentFactory::construct(){
-    return new ApartmentBuilding();
+Building* ApartmentFactory::construct(string name){
+    return new ApartmentBuilding(name);
 }
 
 Unit* ApartmentFactory::createUnit(int unitNumber, string size){

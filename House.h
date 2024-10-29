@@ -12,7 +12,8 @@ class House: public Building{
         string size;
         BuidlingState* state;
     public:
-    House(string name, string size);
+    House(string name);
+    void setSize(string size);
     void displayInfo() override;
     void setState(BuidlingState* newState) override;
     void getState() override;

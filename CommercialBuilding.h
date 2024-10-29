@@ -9,7 +9,8 @@ class CommercialBuilding: public Building{
         string size;
         BuildingState* state;
     public:
-        CommercialBuilding(string name, string size);
+        CommercialBuilding(string name);
+        void setSize(string size);
         void displayInfo() override;
         void setState(BuidlingState* newState) override;
         void getState() override;

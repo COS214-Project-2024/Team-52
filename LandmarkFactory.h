@@ -8,7 +8,7 @@ class LandmarkFactory: public BuildingFactory{
     private:
 
     public:
-        Building* construct() override;
+        Building* construct(string name) override;
 };
 
 #endif
