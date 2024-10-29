@@ -1,28 +1,33 @@
 #include "Landmark.h"
 
-Landmark::Landmark(string name, string size): Building(name){
-    this.size = size;
+Landmark::Landmark(string name){
+    this->name = name;
     construct();
 }
 
-Landmark::Landmark(string name, string size, BuildingState* state): Building(name){
-    this.size = size;
-    this.state = state;
+Landmark::Landmark(string name, string size, BuildingState* state){
+    this->size = size;
+    this->state = state;
+    this->name = name;
 }
 
 void Landmark::displayInfo(){
     cout<<"This is a "<<size<<" sized Landmark."<<endl;
 }
 
-void Landmark::setState(BuidlingState* newState){
+void Landmark::setState(BuildingState* newState){
     if(newState){
-        this.state = newState;
+        this->state = newState;
     } else{
         cout<<"State can't be null"<<endl;
     }
 }
 
-void Landmark::getState(){
+void Landmark::setSize(string size){
+    this->size = size;
+}
+
+BuildingState* Landmark::getState(){
     return state;
 }
 
@@ -46,13 +51,13 @@ void Landmark::closeDown(){
 }
 
 void Landmark::damage(){
-    state->closeDown(this;)
+    state->closeDown(this);
     cout<<"Landmark "<<name<<" is now damaged"<<endl;
 }
 
 Building* Landmark::clone(){
     cout<<"A clone of Landmark "<<name<<" has been created"<<endl;
-    return new Landmark(this.name, this.size, this.state);
+    return new Landmark(this->name, this->size, this->state);
 }
 
 void Landmark::useResources(){

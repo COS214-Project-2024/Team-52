@@ -1,28 +1,34 @@
 #include "House.h"
 
-House::House(string name, string size): Building(name){
-    this.size = size;
+House::House(string name){
+    this->name = name;
+    this->size = size;
     construct();
 }
 
-House::House(string name, string size, BuildingState* state): Building(name){
-    this.size = size;
-    this.state = state;
+void House::setSize(string size){
+    this->size = size;
+}
+
+House::House(string name, string size, BuildingState* state){
+    this->name = name;
+    this->size = size;
+    this->state = state;
 }
 
 void House::displayInfo(){
     cout<<"This is a "<<size<<" sized house."<<endl;
 }
 
-void House::setState(BuidlingState* newState){
+void House::setState(BuildingState* newState){
     if(newState){
-        this.state = newState;
+        this->state = newState;
     } else{
         cout<<"State can't be null"<<endl;
     }
 }
 
-void House::getState(){
+BuildingState* House::getState(){
     return state;
 }
 
@@ -46,13 +52,13 @@ void House::closeDown(){
 }
 
 void House::damage(){
-    state->closeDown(this;)
+    state->closeDown(this);
     cout<<"House "<<name<<" is now damaged"<<endl;
 }
 
 Building* House::clone(){
     cout<<"A clone of House "<<name<<" has been created"<<endl;
-    return new House(this.name, this.size, this.state);
+    return new House(this->name, this->size, this->state);
 }
 
 void House::useResources(){

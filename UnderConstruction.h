@@ -2,8 +2,13 @@
 #define UNDERCONSTRUCTION_H
 
 #include <iostream>
+#include "BuildingState.h"
+#include "ClosedDown.h"
+#include "Damaged.h"
+#include "Operational.h"
 using namespace std;
 
+class BuildingState;
 class UnderConstruction: public BuildingState{
     private:
 

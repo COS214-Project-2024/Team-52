@@ -12,6 +12,10 @@ void ApartmentBuilding::addUnit(Unit* unit){
     }
 }
 
+void ApartmentBuilding::setSize(string size){
+    this->size = size;
+}
+
 void ApartmentBuilding::removeUnit(Unit* unit){
     if(unit){
         units.erase(std::remove(units.begin(), units.end(), unit), units.end());
@@ -25,35 +29,40 @@ void ApartmentBuilding::useResources(){
 }
 
 void ApartmentBuilding::displayInfo(){
-    cout<<"This is an Apartment Building called "<<getName()<<" with the following units: "<<endl;
+    cout<<"This is an Apartment Building called "<<name<<" with the following units: "<<endl;
     int i =0;
     for (const auto& unit : units) {
         if(unit){
             i++;
-            cout<<i<<". "<<unit->displayInfo()<<endl;
+            cout<<i<<". ";
+            unit->displayInfo();
+            cout<<endl;
         }
     }
     cout<<"This Apartment Building has "<<i<<" units."<<endl;
 }
 
 
-ApartmentBuilding::ApartmentBuilding(string name): Building(name){
+ApartmentBuilding::ApartmentBuilding(string name){
+    this->name = name;
     construct();
 }
 
-ApartmentBuilding::ApartmentBuilding(string name, BuildingState* state): Building(name){
-    this.state = state;
+ApartmentBuilding::ApartmentBuilding(string name, BuildingState* state){
+    this->name = name;
+    this->state = state;
+
 }
 
-void ApartmentBuilding::setState(BuidlingState* newState){
+void ApartmentBuilding::setState(BuildingState* newState){
     if(newState){
-        this.state = newState;
+        state = newState;
     } else{
         cout<<"State can't be null"<<endl;
     }
 }
 
-void ApartmentBuilding::getState(){
+BuildingState* ApartmentBuilding::getState(){
     return state;
 }
 
@@ -73,13 +82,13 @@ void ApartmentBuilding::closeDown(){
 }
 
 void ApartmentBuilding::damage(){
-    state->closeDown(this;)
+    state->closeDown(this);
     cout<<"Apartment Building "<<name<<" is now damaged"<<endl;
 }
 
 Building* ApartmentBuilding::clone(){
     cout<<"A clone of Apartment Building "<<name<<" has been created"<<endl;
-    return new Unit(this.name, this.state);
+    return new ApartmentBuilding(this->name, this->state);
 }
 
 void Unit::useResources(){

@@ -2,6 +2,11 @@
 #define CLOSEDDOWN_H
 
 #include <iostream>
+#include "BuildingState.h"
+#include "Building.h"
+#include "Operational.h"
+#include "UnderConstruction.h"
+#include "Damaged.h"
 using namespace std;
 
 class ClosedDown: public BuildingState{

@@ -2,6 +2,9 @@
 #define DAMAGED_H
 
 #include <iostream>
+#include "ClosedDown.h"
+#include "UnderConstruction.h"
+#include "Operational.h"
 using namespace std;
 
 class Damaged: public BuildingState{

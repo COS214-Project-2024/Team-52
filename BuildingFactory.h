@@ -2,8 +2,10 @@
 #define BUILDINGFACTORY_H
 
 #include <iostream>
+#include "Building.h"
 using namespace std;
 
+class Building;
 class BuildingFactory{
     private:
 

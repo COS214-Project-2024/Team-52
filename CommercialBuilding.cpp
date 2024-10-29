@@ -1,28 +1,33 @@
 #include "CommercialBuilding.h"
 
-CommercialBuilding::CommercialBuilding(string name, string size): Building(name){
-    this.size = size;
+CommercialBuilding::CommercialBuilding(string name){
+    this->name = name;
     construct();
 }
 
-CommercialBuilding::CommercialBuilding(string name, string size, BuildingState* state): Building(name){
-    this.size = size;
-    this.state = state;
+CommercialBuilding::CommercialBuilding(string name, string size, BuildingState* state){
+    this->name = name;
+    this->size = size;
+    this->state = state;
+}
+
+void CommercialBuilding::setSize(string size){
+    this->size = size;
 }
 
 void CommercialBuilding::displayInfo(){
     cout<<"This is a "<<size<<" sized Commercial Building."<<endl;
 }
 
-void CommercialBuilding::setState(BuidlingState* newState){
+void CommercialBuilding::setState(BuildingState* newState){
     if(newState){
-        this.state = newState;
+        this->state = newState;
     } else{
         cout<<"State can't be null"<<endl;
     }
 }
 
-void CommercialBuilding::getState(){
+BuildingState* CommercialBuilding::getState(){
     return state;
 }
 
@@ -46,13 +51,13 @@ void CommercialBuilding::closeDown(){
 }
 
 void CommercialBuilding::damage(){
-    state->closeDown(this;)
+    state->closeDown(this);
     cout<<"Commercial Building "<<name<<" is now damaged"<<endl;
 }
 
 Building* CommercialBuilding::clone(){
     cout<<"A clone of Commercial Building "<<name<<" has been created"<<endl;
-    return new CommercialBuilding(this.name, this.size, this.state);
+    return new CommercialBuilding(this->name, this->size, this->state);
 }
 
 void CommercialBuilding::useResources(){

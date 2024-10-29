@@ -9,14 +9,17 @@ using namespace std;
 class BuidlingState;
 class House: public Building{
     private:
+        string name;
         string size;
-        BuidlingState* state;
+        BuildingState* state;
     public:
+    virtual ~House() = default;
     House(string name);
+    House(string name, string size, BuildingState* state);
     void setSize(string size);
     void displayInfo() override;
-    void setState(BuidlingState* newState) override;
-    void getState() override;
+    void setState(BuildingState* newState) override;
+    BuildingState* getState() override;
     void getName() override;
     void construct() override;
     void operate() override;

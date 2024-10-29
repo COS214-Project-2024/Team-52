@@ -2,6 +2,9 @@
 #define OPERATIONAL_H
 
 #include <iostream>
+#include "ClosedDown.h"
+#include "Damaged.h"
+#include "UnderConstruction.h"
 using namespace std;
 
 class Operational: public BuildingState{

@@ -8,21 +8,20 @@ using namespace std;
 class BuildingState;
 class Building{
     private:
-        string name;
-        BuidlingState* state;
+        BuildingState* state;
     public:
-    Building(string name);
-    virtual ~Building();
-    void setState(BuidlingState* newState);
-    void getState();
-    void getName();
-    virtual void construct();
-    virtual void operate();
-    virtual void closeDown();
-    virtual void damage();
-    virtual void displayInfo();
-    virtual Building* clone();
-    virtual void useResources();
+    virtual ~Building() = default;
+    virtual void setState(BuildingState* newState)=0;
+    virtual void setSize(string size) =0;
+    virtual BuildingState* getState()=0;
+    virtual void getName()=0;
+    virtual void construct()=0;
+    virtual void operate()=0;
+    virtual void closeDown()=0;
+    virtual void damage()=0;
+    virtual void displayInfo()=0;
+    virtual Building* clone()=0;
+    virtual void useResources()=0;
 };
 
 #endif

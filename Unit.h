@@ -2,6 +2,9 @@
 #define UNIT_H
 
 #include <iostream>
+#include "Apartment.h"
+#include "BuildingState.h"
+#include "Building.h"
 using namespace std;
 
 class Unit: public Apartment{
@@ -10,10 +13,13 @@ class Unit: public Apartment{
         string size;
         BuildingState* state;
     public:
+        virtual ~Unit() = default;
         Unit(int number, string size);
+        Unit(int number, string size, BuildingState* state);
+        void setSize(string size);
         void displayInfo() override;
-        void setState(BuidlingState* newState) override;
-        void getState() override;
+        void setState(BuildingState* newState) override;
+        BuildingState* getState() override;
         void getName() override;
         void construct() override;
         void operate() override;
