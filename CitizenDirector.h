@@ -4,11 +4,17 @@
 #include <iostream>
 using namespace std;
 
-class CitizenDirector{
-    private:
+#include "CitizenBuilder.h"
 
-    public:
-    
+class CitizenDirector{
+private:
+    CitizenBuilder* builder;
+
+public:
+    CitizenDirector(CitizenBuilder* builder);
+
+    Citizen* createChild(const std::string& name, int age, int satisfaction);
+    Citizen* createAdult(const std::string& name,int age, int satisfaction, double income, bool isEmployed);
 };
 
 #endif
