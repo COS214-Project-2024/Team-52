@@ -4,6 +4,7 @@
 #include <vector>
 #include "Citizen.h"
 #include "Building.h"
+#include <iostream>
 
 using namespace std ;
 
