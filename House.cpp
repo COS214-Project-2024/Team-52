@@ -4,6 +4,7 @@ House::House(string name){
     this->name = name;
     this->size = size;
     setState(new UnderConstruction);
+    cout<<"House "<<name<<" is now under construction"<<endl;
 }
 
 void House::setSize(string size){
@@ -56,7 +57,7 @@ void House::damage(){
     cout<<"House "<<name<<" is now damaged"<<endl;
 }
 
-Building* House::clone(){
+House* House::clone(){
     cout<<"A clone of House "<<name<<" has been created"<<endl;
     return new House(this->name, this->size, this->state);
 }

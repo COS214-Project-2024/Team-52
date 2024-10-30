@@ -35,7 +35,7 @@ class ApartmentBuilding: public Apartment{
         void operate() override;
         void closeDown() override;
         void damage() override;
-        Building* clone() override;
+        ApartmentBuilding* clone() override;
         void useResources() override;
         void setSize(string size);
 };

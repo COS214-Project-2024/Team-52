@@ -25,6 +25,69 @@ void testFacade(){
     simulation->start();
 }
 
+void testFactory(){
+    HouseFactory* hf = new HouseFactory();
+    House* home = hf->construct("Home");
+    home->setSize("Big");
+    home->operate();
+    Building* newHome = home->clone();
+    home->damage();
+    newHome->closeDown();
+    home->displayInfo();
+    newHome->displayInfo();
+
+    cout<<"================================="<<endl;
+
+    CommercialFactory* cf = new CommercialFactory();
+    CommercialBuilding* shop = cf->construct("myShop"); 
+    shop->setSize("Small");
+    shop->operate();
+    CommercialBuilding* newShop = shop->clone();
+    shop->damage();
+    newShop->closeDown();
+    shop->displayInfo();
+    newShop->displayInfo();
+
+    cout<<"================================="<<endl;
+
+    LandmarkFactory* lf = new LandmarkFactory();
+    Landmark* park = lf->construct("Park");
+    park->setSize("Small");
+    park->operate();
+    Landmark* newPark = park->clone();
+    park->damage();
+    newPark->closeDown();
+    park->displayInfo();
+    newPark->displayInfo();
+
+    cout<<"================================="<<endl;
+
+    ApartmentFactory* af = new ApartmentFactory();
+    ApartmentBuilding* myApartmentBuilding = af->construct("Apartment1");
+    myApartmentBuilding->setSize("Small");
+    myApartmentBuilding->operate();
+    ApartmentBuilding* newApartmentBuilding = myApartmentBuilding->clone();
+    myApartmentBuilding->damage();
+    myApartmentBuilding->displayInfo();
+    newApartmentBuilding->displayInfo();
+
+    cout<<"================================="<<endl;
+
+    Unit* myUnit = af->createUnit(123, "Small");
+    myUnit->operate();
+    Unit* newUnit = myUnit->clone();
+    myUnit->damage();
+    myUnit->displayInfo();
+    newUnit->closeDown();
+    newUnit->displayInfo();
+
+    cout<<"================================="<<endl;
+    
+    myApartmentBuilding = new ApartmentBuilding("ap");
+    myApartmentBuilding->addUnit(myUnit);
+    myApartmentBuilding->displayInfo();
+}
+
 void testBasicBuildings(){
     Building* home = new House("Home");
     home->setSize("Big");
@@ -122,6 +185,8 @@ void testCitizenCreation() {
 }
 
 int main(){
+
+    testFactory();
 
     testFacade();
     

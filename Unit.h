@@ -29,7 +29,7 @@ class Unit: public Apartment{
         void operate() override;
         void closeDown() override;
         void damage() override;
-        Building* clone() override;
+        Unit* clone() override;
         void useResources() override;
 };
 

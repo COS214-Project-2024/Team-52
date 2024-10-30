@@ -29,7 +29,7 @@ class House: public Building{
     void operate() override;
     void closeDown() override;
     void damage() override;
-    Building* clone() override;
+    House* clone() override;
     void useResources() override;
 };
 
