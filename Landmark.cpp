@@ -2,7 +2,7 @@
 
 Landmark::Landmark(string name){
     this->name = name;
-    construct();
+    setState(new UnderConstruction);
 }
 
 Landmark::Landmark(string name, string size, BuildingState* state){

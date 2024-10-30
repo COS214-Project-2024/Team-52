@@ -45,7 +45,7 @@ void ApartmentBuilding::displayInfo(){
 
 ApartmentBuilding::ApartmentBuilding(string name){
     this->name = name;
-    construct();
+    setState(new UnderConstruction);
 }
 
 ApartmentBuilding::ApartmentBuilding(string name, BuildingState* state){

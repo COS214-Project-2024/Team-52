@@ -3,7 +3,7 @@
 House::House(string name){
     this->name = name;
     this->size = size;
-    construct();
+    setState(new UnderConstruction);
 }
 
 void House::setSize(string size){

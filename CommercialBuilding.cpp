@@ -2,7 +2,7 @@
 
 CommercialBuilding::CommercialBuilding(string name){
     this->name = name;
-    construct();
+    setState(new UnderConstruction);
 }
 
 CommercialBuilding::CommercialBuilding(string name, string size, BuildingState* state){
