@@ -45,7 +45,7 @@ void ApartmentBuilding::displayInfo(){
 
 ApartmentBuilding::ApartmentBuilding(string name){
     this->name = name;
-    construct();
+    setState(new UnderConstruction);
 }
 
 ApartmentBuilding::ApartmentBuilding(string name, BuildingState* state){
@@ -86,7 +86,7 @@ void ApartmentBuilding::damage(){
     cout<<"Apartment Building "<<name<<" is now damaged"<<endl;
 }
 
-Building* ApartmentBuilding::clone(){
+ApartmentBuilding* ApartmentBuilding::clone(){
     cout<<"A clone of Apartment Building "<<name<<" has been created"<<endl;
     return new ApartmentBuilding(this->name, this->state);
 }
