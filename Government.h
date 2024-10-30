@@ -14,8 +14,8 @@ class Government {
       GovernmentMediator* mediator ;
       Government* backup ;
       CityGrowthManager* cityGrowthManager ;
-      vector<Citizen> citizens ;
-      vector<Building> buildings ;
+      vector<Citizen*> citizens ;
+      vector<Building*> buildings ;
   public :
     Government(double cRate, double bRate, vector<Citizen*>);
 
