@@ -3,12 +3,12 @@
 
 #include <iostream>
 using namespace std;
+#include "BuildingDecorator.h"
 
 class BoreholeDecorator: public BuildingDecorator{
-    private:
-
-    public:
-    
+public:
+    explicit BoreholeDecorator(Building* building);
+    void displayInfo() override ;
 };
 
 #endif
