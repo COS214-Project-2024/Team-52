@@ -1,15 +1,14 @@
 #include "Citizen.h"
 
-#include <iostream>
+int Citizen::lastAssignedID = 0;
 
-Citizen::Citizen() : name(""), ID(0), age(0), income(0.0), satisfaction(0), isEmployed(false) {}
+Citizen::Citizen() : name(""), age(0), income(0.0), satisfaction(0), isEmployed(false) {
+    lastAssignedID++; // Increment the ID counter
+    ID = lastAssignedID;
+}
 
 void Citizen::setName(const std::string& name) { 
     this->name = name; 
-}
-
-void Citizen::setID(int ID) {
-     this->ID = ID; 
 }
 
 void Citizen::setAge(int age) {
