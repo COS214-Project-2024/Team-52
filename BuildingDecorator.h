@@ -17,7 +17,7 @@ public:
     virtual ~BuildingDecorator();
 
     void setSize(std::string size) override;
-    void displayInfo() override;
+    virtual void displayInfo() =0;
     void setState(BuildingState* newState) override;
     BuildingState* getState() override;
     void getName() override;

@@ -10,16 +10,6 @@ void BuildingDecorator::setSize(std::string size) {
     decoratedBuilding->setSize(size);
 }
 
-void BuildingDecorator::displayInfo() {
-    decoratedBuilding->displayInfo();
-    if (hasBorehole) {
-        std::cout << "Feature: Borehole installed." << std::endl;
-    }
-    if (hasSolarPanel) {
-        std::cout << "Feature: Solar Panel installed." << std::endl;
-    }
-}
-
 void BuildingDecorator::setState(BuildingState* newState) {
     decoratedBuilding->setState(newState);
 }
