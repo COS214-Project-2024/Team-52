@@ -1,8 +1,15 @@
 #ifndef GOVERNMENTCARETAKER_H
 #define GOVERNMENTCARETAKER_H
 
-class GovernmentCaretaker{
+#include "GovernmentMemento.h"
 
+class GovernmentCaretaker{
+    private :
+        vector<GovernmentMemento*> history ;
+    public :
+        void saveMemento(GovernmentMemento* memento);
+        GovernmentCaretaker* getMemento(int i);
+        ~GovernmentCaretaker();
 };
 
 
