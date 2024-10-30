@@ -3,6 +3,7 @@
 
 #include <iostream>
 using namespace std;
+#include "BuildingDecorator.h"
 
 class BoreholeDecorator: public BuildingDecorator{
     private:
