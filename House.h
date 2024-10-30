@@ -4,6 +4,10 @@
 #include <iostream>
 #include "Building.h"
 #include "BuildingState.h"
+#include "UnderConstruction.h"
+#include "Operational.h"
+#include "ClosedDown.h"
+#include "Damaged.h"
 using namespace std;
 
 class BuidlingState;

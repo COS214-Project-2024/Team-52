@@ -6,6 +6,10 @@
 #include "Unit.h"
 #include "BuildingState.h"
 #include "Building.h"
+#include "UnderConstruction.h"
+#include "Operational.h"
+#include "ClosedDown.h"
+#include "Damaged.h"
 using namespace std;
 
 

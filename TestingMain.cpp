@@ -1,5 +1,22 @@
 #include "CityFacade.h"
 #include "CitySimulation.h"
+#include "BuildingFactory.h"
+#include "ApartmentFactory.h"
+#include "CommercialFactory.h"
+#include "HouseFactory.h"
+#include "LandmarkFactory.h"
+#include "Building.h"
+#include "Apartment.h"
+#include "ApartmentBuilding.h"
+#include "Unit.h"
+#include "House.h"
+#include "Landmark.h"
+#include "CommercialBuilding.h"
+#include "BuildingState.h"
+#include "UnderConstruction.h"
+#include "Damaged.h"
+#include "Operational.h"
+#include "ClosedDown.h"
 #include <iostream>
 using namespace std;
 
@@ -50,12 +67,28 @@ void testCitizenCreation() {
     delete adult;
 }
 
+void testBuildings(){
+    Building* home = new House("Home");
+    home->setSize("Big");
+    home->operate();
+    Building* newHome = home->clone();
+    home->damage();
+    newHome->closeDown();
+    home->displayInfo();
+    newHome->displayInfo();
+
+    cout<<"============================================"<<endl;
+    
+}
+
 int main(){
 
     testFacade();
     
     // Test citizen creation
     testCitizenCreation();
+
+    testBuildings();
 
     return 0;
 }
