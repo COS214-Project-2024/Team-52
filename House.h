@@ -4,6 +4,10 @@
 #include <iostream>
 #include "Building.h"
 #include "BuildingState.h"
+#include "UnderConstruction.h"
+#include "Operational.h"
+#include "ClosedDown.h"
+#include "Damaged.h"
 using namespace std;
 
 class BuidlingState;
@@ -25,7 +29,7 @@ class House: public Building{
     void operate() override;
     void closeDown() override;
     void damage() override;
-    Building* clone() override;
+    House* clone() override;
     void useResources() override;
 };
 
