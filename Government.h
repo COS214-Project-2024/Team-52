@@ -3,6 +3,7 @@
 
 #include "Citizen.h"
 #include "CityGrowthManager.h"
+#include "GovernmentMemento.h"
 
 #include <string>
 #include <vector>
@@ -33,12 +34,5 @@ class Government {
     GovernmentMemento* saveState();
     void restoreState(GovernmentMemento* memento);
     void displayState();
-
-
-
-}
-
-
-
-
+};
 #endif
