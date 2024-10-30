@@ -2,6 +2,7 @@
 #define GOVERNMENT_H
 #include "Citizen.h"
 #include "CityGrowthManager.h"
+#include "Building.h"
 #include <string>
 #include <vector>
 class GovernmentMediator;
