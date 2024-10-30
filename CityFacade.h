@@ -1,8 +1,18 @@
 #ifndef CITYFACADE_H
 #define CITYFACADE_H
 
-class CityFacade{
+#include <iostream>
+using namespace std;
 
+class CityFacade{
+    public:
+        CityFacade();
+        void buildHouse();
+        void buildApartmentBuilding();
+        void buildApartment();
+        void buildLandmark();
+        void buildCommercialBuilding();
+        
 };
 
 #endif
