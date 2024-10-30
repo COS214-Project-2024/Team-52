@@ -25,6 +25,60 @@ void testFacade(){
     simulation->start();
 }
 
+void testBasicBuildings(){
+    Building* home = new House("Home");
+    home->setSize("Big");
+    home->operate();
+    Building* newHome = home->clone();
+    home->damage();
+    newHome->closeDown();
+    home->displayInfo();
+    newHome->displayInfo();
+
+    cout<<"================================="<<endl;
+
+    Building* shop = new CommercialBuilding("myShop");
+    shop->setSize("Small");
+    shop->operate();
+    Building* newShop = shop->clone();
+    shop->damage();
+    newShop->closeDown();
+    shop->displayInfo();
+    newShop->displayInfo();
+
+    cout<<"================================="<<endl;
+
+    Building* park = new Landmark("myPark");
+    park->setSize("Small");
+    park->operate();
+    Building* newPark = park->clone();
+    park->damage();
+    newPark->closeDown();
+    park->displayInfo();
+    newPark->displayInfo();
+
+    cout<<"================================="<<endl;
+
+    Building* myApartmentBuilding = new ApartmentBuilding("Apartment Building");
+    myApartmentBuilding->setSize("Small");
+    myApartmentBuilding->operate();
+    Building* newApartmentBuilding = myApartmentBuilding->clone();
+    myApartmentBuilding->damage();
+    myApartmentBuilding->displayInfo();
+    newApartmentBuilding->displayInfo();
+
+    cout<<"================================="<<endl;
+
+    Building* myUnit = new Unit(123, "Medium");
+    myUnit->setSize("Small");
+    myUnit->operate();
+    Building* newUnit = myUnit->clone();
+    myUnit->damage();
+    myUnit->displayInfo();
+    newUnit->closeDown();
+    newUnit->displayInfo();
+}
+
 void setCitizenDetails(Citizen* citizen, const std::string& name, int age, double income, int satisfaction, bool isEmployed) {
     citizen->setName(name);
     citizen->setAge(age);
@@ -67,20 +121,6 @@ void testCitizenCreation() {
     delete adult;
 }
 
-void testBuildings(){
-    Building* home = new House("Home");
-    home->setSize("Big");
-    home->operate();
-    Building* newHome = home->clone();
-    home->damage();
-    newHome->closeDown();
-    home->displayInfo();
-    newHome->displayInfo();
-
-    cout<<"============================================"<<endl;
-    
-}
-
 int main(){
 
     testFacade();
@@ -88,7 +128,7 @@ int main(){
     // Test citizen creation
     testCitizenCreation();
 
-    testBuildings();
+    testBasicBuildings();
 
     return 0;
 }
