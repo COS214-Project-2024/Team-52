@@ -23,8 +23,8 @@ void City::addBuilding(Building *b)
 
  CityIterator* City::createBuildingIterator()
 {
-   // return new BuildingIterator(buildings);
-  return nullptr;
+   return new BuildingIterator(buildings);
+  //return nullptr;
 }
 
 CityIterator *City::createCitizenIterator()

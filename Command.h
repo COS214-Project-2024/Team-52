@@ -3,8 +3,8 @@
 
 class Command{
     public :
-    virtual void execute();
-    virtual ~Command();
+    virtual void execute()=0;
+    virtual ~Command()=0;
 };
 
 #endif
